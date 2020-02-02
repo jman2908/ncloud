@@ -1,0 +1,19 @@
+{
+  "name": "ncloud",
+  "version": "1.0.0",
+  "description": "website scraper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jman2908/ncloud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jman2908/ncloud/issues"
+  },
+  "homepage": "https://github.com/jman2908/ncloud#readme"
+}
