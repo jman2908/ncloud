@@ -26,5 +26,38 @@ mongoose.connect(MONGODB_URI);
 app.get("/scrape", function(req, res) {
     axios.get("http://www.nytimes.com").then(function(response) {
         const $ = cheerio.load(response.data);
+
+        $("h5").each(function(i, element) {
+            const result = {};
+
+            result.title = $(this)
+            .children("a")
+            .text();
+            result.link = $(this)
+            .children("a")
+            .attr("href");
+
+        db.Article.create(result)
+        .then(function(dbArticle) {
+            console.log(dbArticle);
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+
+        });
+
+        res.send("Scrape Complete");
+    });
+});
+
+app.get("/articles", function(req, res) {
+    db.Article.find()
+    .then(function(dbPopulate) {
+        res.json(dbPopulate);
     })
-})
+    .catch(function(err) {
+        res.json(err);
+    });
+});
+
