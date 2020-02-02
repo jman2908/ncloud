@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/jman2908/ncloud/issues"
   },
-  "homepage": "https://github.com/jman2908/ncloud#readme"
+  "homepage": "https://github.com/jman2908/ncloud#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.9"
+  }
 }
